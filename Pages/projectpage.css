@@ -1,0 +1,242 @@
+/* ====== GOOGLE FONTS ====== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ====== GLOBAL STYLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0a0f1f; 
+  color: #f8fafc;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease;
+}
+
+/* ====== NAVIGATION BAR ====== */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  background: rgba(15, 23, 42, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+nav,
+header {
+  background-color: rgba(0, 0, 0, 0.7); 
+  transition: none;
+}
+
+nav:hover,
+header:hover {
+  background-color: rgba(0, 0, 0, 0.7); 
+}
+
+
+/* When scrolling down — navbar gets more solid and glowing */
+header.scrolled {
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 2px 20px rgba(56, 189, 248, 0.4);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #7dd3fc;
+  text-shadow: 0 0 10px #38bdf8;
+}
+
+/* Logo styling */
+.nav-logo {
+  width: 50px;         
+  height: 50px;
+  border-radius: 50%;   
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* hover effect */
+.nav-logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+
+.logo-right {
+  display: flex;
+  align-items: center;
+}
+
+.logo-right .nav-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-right .nav-logo:hover {
+  transform: scale(1.1);
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  position: relative;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #38bdf8;
+}
+
+/* ====== RESPONSIVE NAVBAR ====== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+
+/* ===== PROJECTS SECTION ===== */
+.projects-section {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+
+.projects-section h1 {
+  font-size: 2.5rem;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+}
+
+/* Project grid */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.project-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.project-info h3 {
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.project-info p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  position: absolute;
+  bottom: length;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .shape {
+    opacity: 0.25;
+  }
+}
